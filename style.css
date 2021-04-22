@@ -115,7 +115,7 @@ html {
     width: 100%;
     background-color: rgba(92, 38, 126, 0.863);
     background-blend-mode: soft-light;
-    background-image: url("../img/image-header-desktop.jpg");
+    background-image: url("./../img/image-header-desktop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; } }
