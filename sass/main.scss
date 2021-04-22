@@ -1,0 +1,168 @@
+$Verydarkblue: hsl(233, 47%, 7%);
+$Darkdesaturatedblue: hsl(244, 38%, 16%);
+$Softviolet: hsl(277, 64%, 61%);
+$White: hsl(0, 0%, 100%);
+$Slightlytransparentwhite: hsla(0, 0%, 100%, 0.75);
+$Slightlytransparentwhite: hsla(0, 0%, 100%, 0.6);
+
+@mixin stats($fsize,$color) {
+    font-size: $fsize;
+    color: $color;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+    
+
+
+.container{
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    background-color: $Verydarkblue;
+}
+.warrper{
+    min-height: 65%;
+    min-width: 65%;
+    border: 1px solid white;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-rows: repeat(1, minmax(50%,1fr));
+    grid-template-columns:repeat(2, minmax(50%,1fr)) ;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top:50%;
+    left: 50%;
+}
+
+.artical{
+    position: relative;
+    border-radius: 2rem 0 0 2rem;
+    color: white;
+    padding: 5rem;
+    background-color: $Darkdesaturatedblue;
+    .artical_heading{
+        @include stats(3.8rem,$White );
+    }
+    .artical_paraghaph{
+        padding-top: 3rem;
+        line-height: 1.7;
+        @include stats(1.8rem,$Slightlytransparentwhite );
+        
+    }
+    .artical_stats{
+        // position: relative;
+        // bottom:0rem;
+        padding-top: 11rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .artical_Stats__companies__heading,
+        .artical_Stats__template_heading,
+        .artical_Stats__querie_heading{
+            @include stats(2.5rem,$White );
+            
+        }
+        .artical_Stats__companies__para,
+        .artical_Stats__template_para,
+        .artical_Stats__querie_para{
+            @include stats(1.5rem,$Slightlytransparentwhite );
+
+        }
+    }  
+}
+
+ .bg_img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(277, 54%, 32%, 0.863);
+    background-blend-mode: soft-light;
+    background-image: url('../img/image-header-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+ }
+
+ @media screen and (max-width:900px) {
+     html{
+         font-size: 50%;
+     }
+     .warrper{
+         padding: .2rem;
+        grid-template-rows: repeat(1, minmax(350px,1fr));
+        grid-template-columns:repeat(2, minmax(340px,1fr)) ;
+     }
+ }
+ @media screen and (max-width:600px) {
+     html{
+         font-size: 44%;
+     }
+     .warrper{
+        min-height: 30%;
+        min-width: 40%;
+        grid-template-rows: repeat(auto-fit, minmax(280px,1fr));
+        grid-template-columns:repeat(auto-fit, minmax(300px,1fr)) ;
+   
+    }
+    .artical{
+        grid-row:2/3;
+        grid-column: 2/-3;
+        border-radius: 0 0 1.5rem 1.5rem;
+        .artical_stats{
+            // position: relative;
+            // bottom:0rem;
+            padding-top: 0rem;
+            display: flex;
+            flex-direction: column;
+            // align-content: space-around;  
+            align-items: center;  
+            .artical_Stats__companies,
+            .artical_Stats__template,
+            .artical_Stats__queries{
+                padding-top: 2rem;
+            }
+            .artical_Stats__companies__heading,
+            .artical_Stats__template_heading,
+            .artical_Stats__querie_heading{
+               text-align: center;
+                
+            }
+            .artical_Stats__companies__para,
+            .artical_Stats__template_para,
+            .artical_Stats__querie_para{
+                text-align: left;
+                padding-top: 1rem;
+    
+            }
+            
+        }
+        
+    }
+    .bg_img{
+        border-radius: 1.5rem 1.5rem 0 0 ;
+        grid-row:1/2;
+        grid-column: 1/2;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: hsla(277, 54%, 32%, 0.863);
+        background-blend-mode: soft-light;
+        background-image: url('../img/image-header-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+       
+     }
+     
+ }

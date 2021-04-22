@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #090b1a; }
+
+.warrper {
+  min-height: 65%;
+  min-width: 65%;
+  border: 1px solid white;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-rows: repeat(1, minmax(50%, 1fr));
+  grid-template-columns: repeat(2, minmax(50%, 1fr));
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+.artical {
+  position: relative;
+  border-radius: 2rem 0 0 2rem;
+  color: white;
+  padding: 5rem;
+  background-color: #1b1938; }
+  .artical .artical_heading {
+    font-size: 3.8rem;
+    color: white; }
+  .artical .artical_paraghaph {
+    padding-top: 3rem;
+    line-height: 1.7;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.6); }
+  .artical .artical_stats {
+    padding-top: 11rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .artical .artical_stats .artical_Stats__companies__heading,
+    .artical .artical_stats .artical_Stats__template_heading,
+    .artical .artical_stats .artical_Stats__querie_heading {
+      font-size: 2.5rem;
+      color: white; }
+    .artical .artical_stats .artical_Stats__companies__para,
+    .artical .artical_stats .artical_Stats__template_para,
+    .artical .artical_stats .artical_Stats__querie_para {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.6); }
+
+.bg_img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(92, 38, 126, 0.863);
+  background-blend-mode: soft-light;
+  background-image: url("../img/image-header-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem; }
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 50%; }
+  .warrper {
+    padding: .2rem;
+    grid-template-rows: repeat(1, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, minmax(340px, 1fr)); } }
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 44%; }
+  .warrper {
+    min-height: 30%;
+    min-width: 40%;
+    grid-template-rows: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .artical {
+    grid-row: 2/3;
+    grid-column: 2/-3;
+    border-radius: 0 0 1.5rem 1.5rem; }
+    .artical .artical_stats {
+      padding-top: 0rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .artical .artical_stats .artical_Stats__companies,
+      .artical .artical_stats .artical_Stats__template,
+      .artical .artical_stats .artical_Stats__queries {
+        padding-top: 2rem; }
+      .artical .artical_stats .artical_Stats__companies__heading,
+      .artical .artical_stats .artical_Stats__template_heading,
+      .artical .artical_stats .artical_Stats__querie_heading {
+        text-align: center; }
+      .artical .artical_stats .artical_Stats__companies__para,
+      .artical .artical_stats .artical_Stats__template_para,
+      .artical .artical_stats .artical_Stats__querie_para {
+        text-align: left;
+        padding-top: 1rem; }
+  .bg_img {
+    border-radius: 1.5rem 1.5rem 0 0;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(92, 38, 126, 0.863);
+    background-blend-mode: soft-light;
+    background-image: url("../img/image-header-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; } }
